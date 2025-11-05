@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { API_BASE } from '../config';
+const res = await axios.get(`${API_BASE}/api/quote`);
+
 
 export default function QuoteGenerator() {
   const [quote, setQuote] = useState(null);

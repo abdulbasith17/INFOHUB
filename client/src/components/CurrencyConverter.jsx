@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { API_BASE } from '../config';
+const res = await axios.get(`${API_BASE}/api/currency?amount=${encodeURIComponent(amount)}`);
+
 
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState('1000');
