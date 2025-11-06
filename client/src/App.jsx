@@ -1,9 +1,11 @@
 // client/src/App.jsx
+console.log("App.jsx loaded successfully");
 import React, { useState } from 'react';
 import WeatherModule from './components/WeatherModule';
 import CurrencyConverter from './components/CurrencyConverter';
 import QuoteGenerator from './components/QuoteGenerator';
 import './index.css'; // make sure index.css is imported
+
 
 export default function App() {
   const [tab, setTab] = useState('weather');

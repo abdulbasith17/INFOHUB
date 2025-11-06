@@ -80,6 +80,15 @@ app.get('/api/currency', async (req, res) => {
   }
 });
 
+const path = require('path');
+
+// Serve React build
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+
+// SPA fallback: send index.html for any non-API route
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);

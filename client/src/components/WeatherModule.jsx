@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API_BASE } from '../config';
-const res = await axios.get(`${API_BASE}/api/weather?city=${encodeURIComponent(city)}`);
-
+import axios from 'axios';
 
 export default function WeatherModule() {
   const [city, setCity] = useState('London');
